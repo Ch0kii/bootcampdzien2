@@ -7,7 +7,8 @@ async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
   const name = target.querySelector('#name').value;
-  await dzien2_backend.greet(name).then((response) => {
+  const numer = target.querySelector('#numer').value;
+  await dzien2_backend.greet(name, Number(numer)).then((response) => {
     greeting.value = response;
   });
 }
